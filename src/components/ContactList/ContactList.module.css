@@ -1,17 +1,7 @@
-ul {
-    list-style-type: none;
+.list {
+    max-width: 300px;
 }
 
 .listItem {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
-    margin-left: 120px;
-}
-
-.contactItem {
-    border: 2px solid black;
-    border-radius: 4px;
-    width: 300px;
+    margin-bottom: 20px;
 }

@@ -1,30 +1,16 @@
-.container {
+.box {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 20px 10px;
+    align-items: center;
     padding: 10px;
-}
-
-.item {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.itemUser {
-    display: flex;
-    gap: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .text {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 14px;
 }
 
 .btn {
-    font-size: 20px;
-    font-weight: 500;
     height: 30px;
-    border-radius: 4px;
 }
