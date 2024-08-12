@@ -1,7 +1,12 @@
-.box {
-    margin-bottom: 20px;
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin-bottom: 25px;
 }
 
-.text {
-    font-size: 14px;
+.field {
+    max-width: 400px;
+    font-size: 18px;
+    margin-top: 10px;
 }
