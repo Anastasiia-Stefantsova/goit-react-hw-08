@@ -1,26 +1,41 @@
-import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations";
-import { Form, Formik, Field } from "formik";
-import css from "./LoginForm.module.css";
-export default function LoginForm() {
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../redux/auth/operations';
+import css from '../LoginForm/LoginForm.module.css';
+
+const validationSchema = Yup.object({
+  email: Yup.string().email('Invalid email address').required('Required'),
+  password: Yup.string().min(6, 'Password must be at least 6 characters').required('Required'),
+});
+
+export const LoginForm = () => {
   const dispatch = useDispatch();
-  const handleSubmit = (value, actions) => {
-    dispatch(logIn(value));
-    actions.resetForm();
-  };
+
   return (
-    <Formik initialValues={{ email: "", password: "" }} onSubmit={handleSubmit}>
-      <Form className={css.form}>
-        <label htmlFor="email" className={css.label}>
+    <>
+    <Formik
+      initialValues={{ email: '', password: '' }}
+      validationSchema={validationSchema}
+      onSubmit={(values, { resetForm }) => {
+        dispatch(logIn(values))
+        resetForm();
+      }}
+    >
+      <Form className={css.form} autoComplete="off">
+        <label className={css.label}>
           Email
-          <Field type="email" name="email" />
+          <Field type="email" name="email" className={css.input} />
+          <ErrorMessage name="email" component="p" className={css.error} />
         </label>
-        <label htmlFor="password" className={css.label}>
+        <label className={css.label}>
           Password
-          <Field type="password" name="password" />
+          <Field type="password" name="password" className={css.input}/>
+          <ErrorMessage name="password" component="p" className={css.error} />
         </label>
-        <button type="submit">Log In</button>
+        <button type="submit" className={css.button}>Log In</button>
       </Form>
     </Formik>
+    </>
   );
-}
+};
