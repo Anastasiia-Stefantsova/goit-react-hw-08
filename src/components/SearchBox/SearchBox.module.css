@@ -1,12 +1,28 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin-bottom: 25px;
-}
+  .label {
+      font-size: 1rem;
+      color: #333;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+  }
 
-.field {
-    max-width: 400px;
-    font-size: 18px;
-    margin-top: 10px;
-}
+  .input {
+      padding: 6px;
+      border: transparent;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      color: #333;
+      outline: none;
+      transition: border-color 0.3s;
+      min-width: 230px;
+  }
+
+  .input:focus {
+      border-color: #0d252c;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
