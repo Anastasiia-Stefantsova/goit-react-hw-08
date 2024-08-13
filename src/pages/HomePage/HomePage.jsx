@@ -13,8 +13,7 @@ export default function HomePage() {
             📲
           </span>
         </h1>
-        <p className={css.description}>This is your contact book. Here you can add contacts, 
-          edit them, and delete them. You can also filter them by phone number or contact name.</p>
+        <p className={css.description}>Please, add your contact</p>
       </div>
     </>
   );
