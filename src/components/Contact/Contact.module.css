@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     flex-grow: 1;
+    padding-right: 10px;
 }
 
 .userName {
@@ -73,6 +74,7 @@ p {
 .editBtn:focus {
     background-color: #007bff;
 }
+
 .list {
     display: block;
     list-style: none;
